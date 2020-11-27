@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             if(mAuth.getCurrentUser().isEmailVerified()){
-                                Intent intent = new Intent(LoginActivity.this, test.class);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 //intent.putExtra("email",mAuth.getCurrentUser().getEmail());
                                 //intent.putExtra("uid",mAuth.getCurrentUser().getUid());
                                 startActivity(intent);
