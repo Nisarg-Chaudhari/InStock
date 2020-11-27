@@ -244,7 +244,7 @@ public class RegisterationActivity extends AppCompatActivity {
         //startActivity(intent);
     }
 
-    public void addData(){
+    public void addData() {
 
         String name = regName.getEditText().getText().toString();
         String username = regUsername.getEditText().getText().toString();
@@ -257,7 +257,7 @@ public class RegisterationActivity extends AppCompatActivity {
         reference = rootnode.getReference("users");
         String uid = mAuth.getUid();
 
-        HashMap<String,Object> users = new HashMap<>();
+        HashMap<String, Object> users = new HashMap<>();
         users.put("name", name);
         users.put("username", username);
         users.put("email", email);
@@ -267,9 +267,9 @@ public class RegisterationActivity extends AppCompatActivity {
 
         reference.child(uid).updateChildren(users);
 
-
+    }
         //DBHelper helper = new DBHelper(name,username,email,password,prof,phnum);
 
 
-    }
+
 }
