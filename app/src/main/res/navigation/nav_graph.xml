@@ -14,18 +14,10 @@
         android:id="@+id/navigation_setting"
         android:name="com.example.instock.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" >
-        <action
-            android:id="@+id/action_navigation_setting_to_navigation_dashboard2"
-            app:destination="@id/navigation_dashboard" />
-    </fragment>
+        tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/navigation_notes"
         android:name="com.example.instock.NotesFragment"
         android:label="fragment_notes"
-        tools:layout="@layout/fragment_notes" >
-        <action
-            android:id="@+id/action_navigation_notes_to_navigation_dashboard2"
-            app:destination="@id/navigation_dashboard" />
-    </fragment>
+        tools:layout="@layout/fragment_notes" />
 </navigation>
