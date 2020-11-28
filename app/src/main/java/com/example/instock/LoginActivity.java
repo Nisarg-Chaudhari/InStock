@@ -78,11 +78,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        if(mAuth.getCurrentUser() != null &&  mAuth.getCurrentUser().isEmailVerified()){
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        if(mAuth.getCurrentUser() != null &&  mAuth.getCurrentUser().isEmailVerified()){
+//            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
     }
 

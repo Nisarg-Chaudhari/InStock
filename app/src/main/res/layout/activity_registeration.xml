@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".RegisterationActivity"
     android:orientation="vertical"
-    android:background="#fff"
 
     android:padding="20dp">
 
@@ -17,7 +16,6 @@
         android:layout_marginTop="-20dp"
         android:fontFamily="@font/bungee"
         android:text="Welcome"
-        android:textColor="@color/black"
         android:textSize="40sp" />
 
     <TextView
@@ -133,21 +131,18 @@
 
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="register"
         android:id="@+id/register"
-        android:textColor="#fff"
-        android:background="@color/purple_200"
         android:layout_marginBottom="10dp"/>
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/alreadySignedUp"
         android:id="@+id/loginfromreg"
-        android:textColor="#000"
-        android:background="#00000000"/>
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
 
 

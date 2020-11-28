@@ -11,9 +11,12 @@
     <string name="add">Add</string>
 
     <string name="categories">Categories</string>
-    <string name="category">Category</string>
-    <string name="items">Items</string>
-    <string name="item">Item</string>
+
+    <string name="grocery">Grocery</string>
+    <string name="grooming">Grooming</string>
+    <string name="stationary">Stationary</string>
+    <string name="tech">Tech</string>
+    <string name="other">Other</string>
 
     <string name="alreadySignedUp">Already have an account? login</string>
 </resources>

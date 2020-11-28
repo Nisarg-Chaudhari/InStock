@@ -9,7 +9,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.instock.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_setting"
         android:name="com.example.instock.SettingFragment"
@@ -20,4 +24,9 @@
         android:name="com.example.instock.NotesFragment"
         android:label="fragment_notes"
         tools:layout="@layout/fragment_notes" />
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.instock.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
 </navigation>
