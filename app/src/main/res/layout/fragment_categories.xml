@@ -45,6 +45,7 @@
                 />
             <!-- Title -->
             <TextView
+                android:id="@+id/card_grocery_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/grocery"
@@ -82,6 +83,7 @@
                 />
             <!-- Title -->
             <TextView
+                android:id="@+id/card_grooming_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/grooming"
@@ -119,6 +121,7 @@
                 />
             <!-- Title -->
             <TextView
+                android:id="@+id/card_stationary_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/stationary"
@@ -156,6 +159,7 @@
                 />
             <!-- Title -->
             <TextView
+                android:id="@+id/card_tech_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tech"
@@ -185,17 +189,18 @@
 
             <!-- Media -->
             <ImageView
+                android:id="@+id/card_others_name"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/other_1"
                 android:scaleType="centerCrop"
-                android:contentDescription="@string/other"
+                android:contentDescription="@string/others"
                 />
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/other"
+                android:text="@string/others"
                 android:gravity="center"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 />

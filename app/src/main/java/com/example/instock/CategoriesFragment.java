@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -31,15 +32,22 @@ public class CategoriesFragment extends Fragment {
 
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
 
-        cardOnClick(activity,R.id.card_grocery);
-        cardOnClick(activity,R.id.card_grooming);
-        cardOnClick(activity,R.id.card_stationary);
-        cardOnClick(activity,R.id.card_tech);
-        cardOnClick(activity,R.id.card_others);
+        cardOnClick(activity,R.id.card_grocery,"Category: Grocery");
+        cardOnClick(activity,R.id.card_grooming,"Category: Grooming");
+        cardOnClick(activity,R.id.card_stationary,"Category: Stationary");
+        cardOnClick(activity,R.id.card_tech,"Category: Tech");
+        cardOnClick(activity,R.id.card_others,"Category: Other");
 
     }
 
-    private void cardOnClick(AppCompatActivity activity,int id) {
+    private void cardOnClick(AppCompatActivity activity,int id,String category_name) {
+
+        MaterialCardView card = activity.findViewById(id);
+
+        ItemsFragment itemsFragment = new ItemsFragment(category_name);
+        card.setOnClickListener(v -> {
+            activity.getSupportFragmentManager().beginTransaction().replace(R.id.dashboard_host_fragment,itemsFragment).addToBackStack(null).commit();
+        });
 
     }
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:id="@+id/card_item"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       >
+        <!-- Title -->
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="left"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/item_title">
+
+            <!-- Count -->
+            <TextView
+                android:id="@+id/item_count_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Count:"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_decrease"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                app:icon="@drawable/ic_round_remove_24"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+            <TextView
+                android:id="@+id/item_count_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_increase"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                app:icon="@drawable/ic_round_add_24"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

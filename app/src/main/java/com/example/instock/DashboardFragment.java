@@ -26,7 +26,6 @@ public class DashboardFragment extends Fragment {
 
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
         CategoriesFragment categoriesFragment = new CategoriesFragment();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.dashboard_nav_host_fragment,categoriesFragment).commit();
-
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.dashboard_host_fragment,categoriesFragment).commit();
     }
 }
