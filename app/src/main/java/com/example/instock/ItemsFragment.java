@@ -14,13 +14,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class ItemsFragment extends Fragment {
 
     RecyclerView recyclerView;
-    ArrayList<ItemModel> data_holder;
+    ItemAdapter adapter;
     String parent_category_name;
+
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser user = mAuth.getCurrentUser();
+    String uid = user.getUid();
+
+    DatabaseReference mRootref = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mDashboardref = mRootref.child("users").child(uid).child("Dashboard");
+    DatabaseReference mCategoryref;
+
 
     public ItemsFragment(String parent_category_name) {
         this.parent_category_name = parent_category_name;
@@ -29,37 +44,37 @@ public class ItemsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_items, container, false);
 
         recyclerView = view.findViewById(R.id.items_recycle);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        data_holder = new ArrayList<>();
 
-        ItemModel itm1 = new ItemModel("Item-1","5");
-        data_holder.add(itm1);
+        mCategoryref = mDashboardref.child(parent_category_name);
+        FirebaseRecyclerOptions<ItemModel> options =
+                new FirebaseRecyclerOptions.Builder<ItemModel>()
+                        .setQuery(mCategoryref.child("Items"), ItemModel.class)
+                        .build();
 
-        ItemModel itm2 = new ItemModel("Item-2","5");
-        data_holder.add(itm2);
-
-        ItemModel itm3 = new ItemModel("Item-3","5");
-        data_holder.add(itm3);
-
-        ItemModel itm4 = new ItemModel("Item-4","10");
-        data_holder.add(itm4);
-
-        recyclerView.setAdapter(new ItemAdapter(data_holder));
+        adapter = new ItemAdapter(options);
+        recyclerView.setAdapter(adapter);
 
         TextView parentCategory = (TextView) view.findViewById(R.id.category_name);
-        parentCategory.setText(parent_category_name);
+        parentCategory.setText(getString(R.string.category_name,parent_category_name));
 
         return view;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
     }
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+
 }

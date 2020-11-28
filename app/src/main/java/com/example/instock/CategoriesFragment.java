@@ -13,16 +13,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class CategoriesFragment extends Fragment {
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
-
         return view;
     }
 
@@ -32,11 +32,11 @@ public class CategoriesFragment extends Fragment {
 
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
 
-        cardOnClick(activity,R.id.card_grocery,"Category: Grocery");
-        cardOnClick(activity,R.id.card_grooming,"Category: Grooming");
-        cardOnClick(activity,R.id.card_stationary,"Category: Stationary");
-        cardOnClick(activity,R.id.card_tech,"Category: Tech");
-        cardOnClick(activity,R.id.card_others,"Category: Other");
+        cardOnClick(activity,R.id.card_grocery,"Groceries");
+        cardOnClick(activity,R.id.card_grooming,"Grooming");
+        cardOnClick(activity,R.id.card_stationary,"Stationary");
+        cardOnClick(activity,R.id.card_tech,"Tech");
+        cardOnClick(activity,R.id.card_others,"Others");
 
     }
 

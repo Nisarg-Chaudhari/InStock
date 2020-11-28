@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ItemsFragment">
 
 
@@ -10,19 +11,38 @@
         android:id="@+id/category_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
         android:text="@string/category_name"
         android:textSize="25sp"
         android:textStyle="bold"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/item_add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@+id/category_name"
+        android:text="@string/add_item"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_round_add_24"
+        style="?attr/materialButtonOutlinedStyle"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/items_recycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/category_name"
-        android:layout_margin="8dp"
-        android:paddingBottom="30dp"
-        android:clickable="false"/>
+        android:layout_below="@+id/item_add_button"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="false"
+        android:paddingBottom="50dp"
+        />
 
 </RelativeLayout>
