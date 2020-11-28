@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -16,12 +15,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 
 public class RegisterationActivity extends AppCompatActivity {
     Button registerbtn, loginfromreg;
@@ -267,21 +264,21 @@ public class RegisterationActivity extends AppCompatActivity {
 
         reference.child(uid).updateChildren(users);
         DatabaseReference dashref = reference.child(uid);
-        dashref.child("Notes").setValue(new itemadd("note","note body"));
+        dashref.child("Notes").child("nt1").setValue(new NoteModel("note1","note body"));
 
-        //itemadd Additem = new itemadd();
 
-        HashMap<String, itemadd> categories = new HashMap<>();
-        categories.put("Groceries",new itemadd("apple","0"));
-        categories.put("Grooming",new itemadd("trimmer","0"));
-        categories.put("Tech",new itemadd("battery","0"));
-        categories.put("Stationary", new itemadd("pens","0"));
-        categories.put("Others",new itemadd("coupons","0"));
+        HashMap<String, ItemModel> categories = new HashMap<>();
+        categories.put("itm1",new ItemModel("0","itemname"));
 
-        dashref.child("Dashboard").setValue(categories);
+
+        dashref.child("Dashboard").child("Groceries").child("Items").setValue(categories);
+        dashref.child("Dashboard").child("Grooming").child("Items").setValue(categories);
+        dashref.child("Dashboard").child("Tech").child("Items").setValue(categories);
+        dashref.child("Dashboard").child("Stationary").child("Items").setValue(categories);
+        dashref.child("Dashboard").child("Others").child("Items").setValue(categories);
 
     }
-        //DBHelper helper = new DBHelper(name,username,email,password,prof,phnum);
+
 
 
 

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -148,19 +147,17 @@ public class LoginActivity extends AppCompatActivity {
 
             ref.child(uid).updateChildren(users);
             DatabaseReference dashref = ref.child(uid);
-            dashref.child("Notes").setValue(new itemadd("note","note body"));
+            dashref.child("Notes").child("nt1").setValue(new NoteModel("note1","note body"));
 
 
-            //itemadd Additem = new itemadd();
+            HashMap<String, ItemModel> categories = new HashMap<>();
+            categories.put("itm1",new ItemModel("0","itemname"));
 
-            HashMap<String, itemadd> categories = new HashMap<>();
-            categories.put("Groceries",new itemadd("apple","0"));
-            categories.put("Grooming",new itemadd("trimmer","0"));
-            categories.put("Tech",new itemadd("battery","0"));
-            categories.put("Stationary", new itemadd("pens","0"));
-            categories.put("Others",new itemadd("coupons","0"));
-
-            dashref.child("Dashboard").setValue(categories);
+            dashref.child("Dashboard").child("Groceries").child("Items").setValue(categories);
+            dashref.child("Dashboard").child("Grooming").child("Items").setValue(categories);
+            dashref.child("Dashboard").child("Tech").child("Items").setValue(categories);
+            dashref.child("Dashboard").child("Stationary").child("Items").setValue(categories);
+            dashref.child("Dashboard").child("Others").child("Items").setValue(categories);
         }
     }
 
