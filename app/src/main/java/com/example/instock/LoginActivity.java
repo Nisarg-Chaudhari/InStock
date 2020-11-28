@@ -78,11 +78,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-//        if(mAuth.getCurrentUser() != null &&  mAuth.getCurrentUser().isEmailVerified()){
-//            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
+        if(mAuth.getCurrentUser() != null &&  mAuth.getCurrentUser().isEmailVerified()){
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 
@@ -147,14 +147,20 @@ public class LoginActivity extends AppCompatActivity {
             users.put("email", emailid);
 
             ref.child(uid).updateChildren(users);
+            DatabaseReference dashref = ref.child(uid);
+            dashref.child("Notes").setValue(new itemadd("note","note body"));
 
-//            HashMap<String, Object> categories = new HashMap<>();
-//            categories.put("Groceries", new Object("apple","1"
-//            ));
-//            categories.put("Grooming");
-//            categories.put("Tech");
-//            categories.put("Stationary");
-//            categories.put("Others");
+
+            //itemadd Additem = new itemadd();
+
+            HashMap<String, itemadd> categories = new HashMap<>();
+            categories.put("Groceries",new itemadd("apple","0"));
+            categories.put("Grooming",new itemadd("trimmer","0"));
+            categories.put("Tech",new itemadd("battery","0"));
+            categories.put("Stationary", new itemadd("pens","0"));
+            categories.put("Others",new itemadd("coupons","0"));
+
+            dashref.child("Dashboard").setValue(categories);
         }
     }
 

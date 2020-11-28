@@ -266,6 +266,19 @@ public class RegisterationActivity extends AppCompatActivity {
         users.put("phone", phnum);
 
         reference.child(uid).updateChildren(users);
+        DatabaseReference dashref = reference.child(uid);
+        dashref.child("Notes").setValue(new itemadd("note","note body"));
+
+        //itemadd Additem = new itemadd();
+
+        HashMap<String, itemadd> categories = new HashMap<>();
+        categories.put("Groceries",new itemadd("apple","0"));
+        categories.put("Grooming",new itemadd("trimmer","0"));
+        categories.put("Tech",new itemadd("battery","0"));
+        categories.put("Stationary", new itemadd("pens","0"));
+        categories.put("Others",new itemadd("coupons","0"));
+
+        dashref.child("Dashboard").setValue(categories);
 
     }
         //DBHelper helper = new DBHelper(name,username,email,password,prof,phnum);
