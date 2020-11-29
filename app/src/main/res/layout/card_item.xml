@@ -1,68 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:id="@+id/card_item"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-       >
-        <!-- Title -->
-        <TextView
-            android:id="@+id/item_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:gravity="left"
-            android:text="Title"
-            android:textStyle="bold"
-            android:textAppearance="?attr/textAppearanceHeadline5" />
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/item_title">
-
-            <!-- Count -->
-            <TextView
-                android:id="@+id/item_count_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="Count:"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_decrease"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                app:icon="@drawable/ic_round_remove_24"
-                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- Title -->
 
             <TextView
-                android:id="@+id/item_count_number"
+                android:id="@+id/item_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
+                android:layout_margin="15dp"
+                android:gravity="left"
+                android:text="Title"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_increase"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                app:icon="@drawable/ic_round_add_24"
-                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_title"
+                android:orientation="horizontal">
 
+                <!-- Count -->
+                <TextView
+                    android:id="@+id/item_count_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="Count:-"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_decrease"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    app:icon="@drawable/ic_round_remove_24" />
+
+                <TextView
+                    android:id="@+id/item_count_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_increase"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    app:icon="@drawable/ic_round_add_24" />
+
+            </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_edit"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            app:icon="@drawable/ic_round_edit_24"
+            app:layout_constraintEnd_toStartOf="@+id/button_delete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_delete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            app:icon="@drawable/ic_round_delete_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
