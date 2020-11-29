@@ -262,20 +262,20 @@ public class RegisterationActivity extends AppCompatActivity {
         users.put("profession", prof);
         users.put("phone", phnum);
 
-        reference.child(uid).updateChildren(users);
-        DatabaseReference dashref = reference.child(uid);
-        dashref.child("Notes").child("nt1").setValue(new NoteModel("note1","note body"));
-
-
-        HashMap<String, ItemModel> categories = new HashMap<>();
-        categories.put("itm1",new ItemModel("0","itemname"));
-
-
-        dashref.child("Dashboard").child("Groceries").child("Items").setValue(categories);
-        dashref.child("Dashboard").child("Grooming").child("Items").setValue(categories);
-        dashref.child("Dashboard").child("Tech").child("Items").setValue(categories);
-        dashref.child("Dashboard").child("Stationary").child("Items").setValue(categories);
-        dashref.child("Dashboard").child("Others").child("Items").setValue(categories);
+//        reference.child(uid).updateChildren(users);
+//        DatabaseReference dashref = reference.child(uid);
+//        dashref.child("Notes").child("nt1").setValue(new NoteModel("note1","note body"));
+//
+//
+//        HashMap<String, ItemModel> categories = new HashMap<>();
+//        categories.put("itm1",new ItemModel("0","itemname"));
+//
+//
+//        dashref.child("Dashboard").child("Groceries").child("Items").setValue(categories);
+//        dashref.child("Dashboard").child("Grooming").child("Items").setValue(categories);
+//        dashref.child("Dashboard").child("Tech").child("Items").setValue(categories);
+//        dashref.child("Dashboard").child("Stationary").child("Items").setValue(categories);
+//        dashref.child("Dashboard").child("Others").child("Items").setValue(categories);
 
     }
 

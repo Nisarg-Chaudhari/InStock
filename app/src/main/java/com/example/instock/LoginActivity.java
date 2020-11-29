@@ -141,23 +141,23 @@ public class LoginActivity extends AppCompatActivity {
             ref = root.getReference("users");
             String uid = mAuth.getUid();
 
-            HashMap<String, Object> users = new HashMap<>();
-            users.put("name", name);
-            users.put("email", emailid);
-
-            ref.child(uid).updateChildren(users);
-            DatabaseReference dashref = ref.child(uid);
-            dashref.child("Notes").child("nt1").setValue(new NoteModel("note1","note body"));
-
-
-            HashMap<String, ItemModel> categories = new HashMap<>();
-            categories.put("itm1",new ItemModel("0","itemname"));
-
-            dashref.child("Dashboard").child("Groceries").child("Items").setValue(categories);
-            dashref.child("Dashboard").child("Grooming").child("Items").setValue(categories);
-            dashref.child("Dashboard").child("Tech").child("Items").setValue(categories);
-            dashref.child("Dashboard").child("Stationary").child("Items").setValue(categories);
-            dashref.child("Dashboard").child("Others").child("Items").setValue(categories);
+//            HashMap<String, Object> users = new HashMap<>();
+//            users.put("name", name);
+//            users.put("email", emailid);
+//
+//            ref.child(uid).updateChildren(users);
+//            DatabaseReference dashref = ref.child(uid);
+//            dashref.child("Notes").child("nt1").setValue(new NoteModel("note1","note body"));
+//
+//
+//            HashMap<String, ItemModel> categories = new HashMap<>();
+//            categories.put("itm1",new ItemModel("0","itemname"));
+//
+//            dashref.child("Dashboard").child("Groceries").child("Items").setValue(categories);
+//            dashref.child("Dashboard").child("Grooming").child("Items").setValue(categories);
+//            dashref.child("Dashboard").child("Tech").child("Items").setValue(categories);
+//            dashref.child("Dashboard").child("Stationary").child("Items").setValue(categories);
+//            dashref.child("Dashboard").child("Others").child("Items").setValue(categories);
         }
     }
 
